@@ -61,11 +61,11 @@ class CoreDataTableViewController<T: NSFetchRequestResult>: UITableViewControlle
 //MARK: NSFetchedResultsControllerDelegate
 extension CoreDataTableViewController: NSFetchedResultsControllerDelegate {
 
-    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    @nonobjc func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
     }
 
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+    @nonobjc func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
         switch type {
         case .insert: tableView.insertSections(IndexSet(integer: sectionIndex), with: .fade)
         case .delete: tableView.deleteSections(IndexSet(integer: sectionIndex), with: .fade)
@@ -74,7 +74,7 @@ extension CoreDataTableViewController: NSFetchedResultsControllerDelegate {
     }
 
 
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: AnyObject, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+    @nonobjc func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: AnyObject, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
 
         //NOTE: indexPath is nil on an insertion and newIndexPath is nil on a deletion
         switch type {
@@ -87,7 +87,7 @@ extension CoreDataTableViewController: NSFetchedResultsControllerDelegate {
         }
     }
 
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    @nonobjc func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.endUpdates()
     }
 }
