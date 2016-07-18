@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-
+/*
 final class MyRecipesViewController: CoreDataTableViewController<Recipe> {
 
 
@@ -52,4 +52,4 @@ final class MyRecipesViewController: CoreDataTableViewController<Recipe> {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-}
+}*/
