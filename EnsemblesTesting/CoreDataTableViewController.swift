@@ -1,6 +1,6 @@
 //
 //  CoreDataTableViewController.swift
-//  AllMyRecipesAgain001
+//  EnsemblesTesting
 //
 //  Created by William Chapman on 5/30/16.
 //  Copyright © 2016 William Chapman. All rights reserved.
@@ -9,9 +9,9 @@
 import UIKit
 import CoreData
 
-class CoreDataTableViewController: UITableViewController {
+class CoreDataTableViewController<T: NSFetchRequestResult>: UITableViewController {
     
-    var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>? {
+    var fetchedResultsController: NSFetchedResultsController<T>? {
         didSet {
             do {
                 if let frc = fetchedResultsController {

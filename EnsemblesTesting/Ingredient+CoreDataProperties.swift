@@ -15,7 +15,7 @@ extension Ingredient {
         return NSFetchRequest<Ingredient>(entityName: "Ingredient");
     }
 
-    @NSManaged var amount: NSNumber?
+    @NSManaged var amount: Double
     @NSManaged var name: String?
     @NSManaged var recipe: Recipe?
 
